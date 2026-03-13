@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Data Review</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #555;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="home-bg">
+
+<div class="container" style="width:90%">
+<h2>Patient Records</h2>
+
+<table>
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Disease</th>
+    <th>Symptoms</th>
+    <th>Severity</th>
+    <th>Treatment</th>
+    <th>Rating</th>
+    <th>Comment</th>
+    <th>Report</th>
+    <th>Date</th>
+</tr>
+
+{% for row in data %}
+<tr>
+    <td>{{ row[0] }}</td>
+    <td>{{ row[1] }}</td>
+    <td>{{ row[2] }}</td>
+    <td>{{ row[3] }}</td>
+    <td>{{ row[4] }}</td>
+    <td>{{ row[5] }}</td>
+    <td>{{ row[6] }}</td>
+    <td>{{ row[7] }}</td>
+    <td>{{ row[8] }}</td>
+    <td>
+        {% if row[9] %}
+        <a href="/static/reports/{{ row[9] }}" target="_blank">View PDF</a>
+        {% else %}
+        No File
+        {% endif %}
+    </td>
+    <td>{{ row[10] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+</body>
+</html>

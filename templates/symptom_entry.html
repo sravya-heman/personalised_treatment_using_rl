@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="form-bg">
+
+<div class="container">
+<form action="/submit" method="POST" enctype="multipart/form-data">
+    Name: <input type="text" name="name" required><br><br>
+    Age: <input type="number" name="age" required><br><br>
+    Disease: <input type="text" name="disease" required><br><br>
+    Symptoms: <textarea name="symptoms" required></textarea><br><br>
+    Upload Medical Report (PDF):
+    <input type="file" name="report" accept=".pdf"><br><br>
+    <button type="submit">Analyze</button>
+</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="result-bg">
+
+<div class="container">
+    <h3>Diagnosis Result</h3>
+    <p><b>Severity:</b> {{ severity }}</p>
+    <p><b>Treatment:</b> {{ treatment }}</p>
+
+    <form action="/feedback" method="POST">
+        <input type="hidden" name="patient_id" value="{{ patient_id }}">
+        Rating (1–5):
+        <input type="number" min="1" max="5" name="rating" required><br><br>
+        Comments:
+        <textarea name="comment"></textarea><br><br>
+        <button type="submit">Submit Feedback</button>
+    </form>
+</div>
+
+</body>
+</html>

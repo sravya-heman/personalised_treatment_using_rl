@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.container {
+    width: 450px;
+    margin: 80px auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+}
+
+/* -------- PAGE BACKGROUNDS -------- */
+
+.home-bg {
+    background-image: url("../images/bg_home.jpg");
+}
+
+.form-bg {
+    background-image: url("../images/bg_form.jpg");
+}
+
+.result-bg {
+    background-image: url("../images/bg_result.jpg");
+}
+
+.feedback-bg {
+    background-image: url("../images/bg_feedback.jpg");
+}
+
+.graph-bg {
+    background-image: url("../images/bg_graph.jpg");
+}
